@@ -106,11 +106,11 @@ def write_batch(batch_df, batch_id):
         .option("header", True) \
         .csv("outputs/task_4")
 
-query = output_df.writeStream \
+"""query = output_df.writeStream \
     .outputMode("append") \
     .foreachBatch(write_batch) \
     .trigger(processingTime="10 seconds") \
-    .start()
+    .start()"""
 
 # Write the final results to the console
 query = output_df.writeStream \
